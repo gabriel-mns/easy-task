@@ -27,8 +27,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               {
-                "glob": "**/*",
-                "input": "public"
+              "glob": "**/*",
+              "input": "public"
               }
             ],
             "styles": [
@@ -98,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "ccc996b1-154a-48ae-9d70-777d0121f369"
   }
 }
