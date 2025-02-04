@@ -1,5 +1,6 @@
 import { Component, computed, EventEmitter, Input, Output, signal} from '@angular/core';
 import { DUMMY_USERS } from '../../data/dummy-users';
+import { User } from './user.model';
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
 
@@ -25,13 +26,5 @@ export class UserComponent {
     return `assets/images/jpg/users/${this.user.avatar}`;
 
   }
-
-}
-
-export interface User{
-
-  id:string,
-  name:string,
-  avatar:string
 
 }

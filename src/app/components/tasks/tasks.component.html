@@ -6,7 +6,21 @@
         </menu>
     </header>
 
-    <ul>
-        <li></li>
-    </ul>
+    @if (tasks.length === 0) {
+
+        <p>No tasks 😅</p>
+
+    } @else {
+        
+        <ul>
+            @for (task of tasks; track $index) {
+    
+                <li>
+                    <app-task [task]="task"/>
+                </li>
+    
+            }
+        </ul>
+
+    }
 </section>
