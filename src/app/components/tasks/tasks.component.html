@@ -6,9 +6,9 @@
         </menu>
     </header>
 
-    @if (dummyTasks.length === 0) {
+    @if (tasks.length === 0) {
 
-        <p>No dummyTasks 😅</p>
+        <p>No tasks 😅</p>
 
     } @else {
         
@@ -16,7 +16,7 @@
             @for (task of tasks; track $index) {
     
                 <li>
-                    <app-task (taskCompleted)="onTaskCompleted(task.id)" [task]="task"/>
+                    <app-task [task]="task"/>
                 </li>
     
             }
@@ -27,6 +27,6 @@
 
 @if (showNewTaskForm) {
 
-    <app-new-task (newTask)="onAddNewTask($event)" (closeDialog)="onCloseDialog()"/>
+    <app-new-task [userId]="user.id" (closeDialog)="onCloseDialog()"/>
 
 }

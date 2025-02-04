@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from "./task/task.component";
-import { DUMMY_TASKS } from '../../data/dummy-tasks';
 import { User } from '../user/user.model';
 import { NewTaskComponent } from "./new-task/new-task.component";
 import { type NewTask } from './task/task.model';
+import { TasksService } from '../../services/tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -14,18 +14,13 @@ import { type NewTask } from './task/task.model';
 export class TasksComponent {
 
   @Input({required:true}) user!:User;
-  dummyTasks = DUMMY_TASKS;
   showNewTaskForm: boolean = false;
+
+  constructor(private tasksService: TasksService) { }
 
   get tasks(){
 
-    return this.dummyTasks.filter(task => task.userId === this.user?.id);
-
-  }
-
-  onTaskCompleted(taskId:string) {
-
-    this.dummyTasks = this.dummyTasks.filter(task => task.id !== taskId);
+    return this.tasksService.getUserTasks(this.user.id);
 
   }
 
@@ -38,19 +33,6 @@ export class TasksComponent {
   onCloseDialog(){
 
     this.showNewTaskForm = false;
-
-  }
-
-  onAddNewTask(newTask: NewTask){
-
-    this.showNewTaskForm = false;
-    this.dummyTasks.unshift({
-      id: Math.random().toString(),
-      userId: this.user.id,
-      title: newTask.title,
-      summary: newTask.summary,
-      dueDate: newTask.dueDate
-    })
 
   }
 
