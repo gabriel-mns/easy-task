@@ -2,13 +2,13 @@
     <header>
         <h2>{{ user.name }}'s tasks</h2>
         <menu>
-            <button>Add Task</button>
+            <button (click)="onNewTaskClick()">Add Task</button>
         </menu>
     </header>
 
-    @if (tasks.length === 0) {
+    @if (dummyTasks.length === 0) {
 
-        <p>No tasks 😅</p>
+        <p>No dummyTasks 😅</p>
 
     } @else {
         
@@ -16,7 +16,7 @@
             @for (task of tasks; track $index) {
     
                 <li>
-                    <app-task [task]="task"/>
+                    <app-task (taskCompleted)="onTaskCompleted(task.id)" [task]="task"/>
                 </li>
     
             }
@@ -24,3 +24,9 @@
 
     }
 </section>
+
+@if (showNewTaskForm) {
+
+    <app-new-task (closeDialog)="onCloseDialog()"/>
+
+}
