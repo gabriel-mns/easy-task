@@ -1,8 +1,5 @@
-import { Component, computed, EventEmitter, Input, Output, signal} from '@angular/core';
-import { DUMMY_USERS } from '../../data/dummy-users';
-import { User } from './user.model';
-
-const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
+import { Component, EventEmitter, Input, Output} from '@angular/core';
+import { User } from '../user/user.model';
 
 @Component({
   selector: 'app-user',
@@ -13,6 +10,7 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
 export class UserComponent {
 
   @Input({required:true}) user!:User;
+  @Input({required:true}) isSelected!:boolean;
   @Output() select = new EventEmitter();
 
   onSelectUser() { 

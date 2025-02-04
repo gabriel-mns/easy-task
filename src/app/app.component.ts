@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "./components/header/header.component";
-import { User, UserComponent } from "./components/user/user.component";
+import { UserComponent } from "./components/user/user.component";
 import { DUMMY_USERS } from './data/dummy-users';
 import { TasksComponent } from "./components/tasks/tasks.component";
+import { User } from './components/user/user.model';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent {
 
   title = 'udemy-project';
   users = DUMMY_USERS;
-  selectedUser!:User;
+  selectedUser?:User;
 
   onSelectUser(user:User) {
 

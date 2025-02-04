@@ -6,7 +6,7 @@
         @for (user of users; track $index) {
 
             <li>
-                <app-user [user]="user" (select)="onSelectUser(user)"/>
+                <app-user [user]="user" [isSelected]="user.id === selectedUser?.id" (select)="onSelectUser(user)"/>
             </li>
 
         }
