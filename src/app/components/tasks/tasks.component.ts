@@ -3,7 +3,7 @@ import { TaskComponent } from "./task/task.component";
 import { DUMMY_TASKS } from '../../data/dummy-tasks';
 import { User } from '../user/user.model';
 import { NewTaskComponent } from "./new-task/new-task.component";
-import { NewTask } from './task/task.model';
+import { type NewTask } from './task/task.model';
 
 @Component({
   selector: 'app-tasks',
