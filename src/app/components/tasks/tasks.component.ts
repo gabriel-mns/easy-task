@@ -3,6 +3,7 @@ import { TaskComponent } from "./task/task.component";
 import { DUMMY_TASKS } from '../../data/dummy-tasks';
 import { User } from '../user/user.model';
 import { NewTaskComponent } from "./new-task/new-task.component";
+import { NewTask } from './task/task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -28,7 +29,7 @@ export class TasksComponent {
 
   }
 
-  onNewTaskClick(){
+  onNewTaskOpen(){
   
     this.showNewTaskForm = true;
 
@@ -37,6 +38,19 @@ export class TasksComponent {
   onCloseDialog(){
 
     this.showNewTaskForm = false;
+
+  }
+
+  onAddNewTask(newTask: NewTask){
+
+    this.showNewTaskForm = false;
+    this.dummyTasks.unshift({
+      id: Math.random().toString(),
+      userId: this.user.id,
+      title: newTask.title,
+      summary: newTask.summary,
+      dueDate: newTask.dueDate
+    })
 
   }
 
