@@ -1,7 +1,5 @@
-import { CommonModule, DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from './task.model';
-import { CardComponent } from "../../shared/card/card.component";
 import { TasksService } from '../../../services/tasks.service';
 
 @Component({

@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { User } from '../user/user.model';
-import { CardComponent } from "../shared/card/card.component";
 
 @Component({
   selector: 'app-user',
