@@ -8,20 +8,20 @@ import { TaskComponent } from "./components/tasks/task/task.component";
 import { CardComponent } from "./components/shared/card/card.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
+import { SharedModule } from "./components/shared/shared.module";
 
 @NgModule({
     declarations: [
         AppComponent, 
-        HeaderComponent, 
         UserComponent, 
         TasksComponent, 
         NewTaskComponent,
         TaskComponent,
-        CardComponent,
     ],
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        SharedModule
     ],
     bootstrap: [AppComponent]
 })
