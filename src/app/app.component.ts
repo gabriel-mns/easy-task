@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DUMMY_USERS } from './data/dummy-users';
 import { User } from './components/user/user.model';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,15 @@ import { User } from './components/user/user.model';
 })
 export class AppComponent {
 
-  title = 'udemy-project';
+  title = 'Easy Task';
   users = DUMMY_USERS;
   selectedUser?:User;
+
+  constructor (private titleService:Title) {
+
+    this.titleService.setTitle(this.title);
+
+  }
 
   onSelectUser(user:User) {
 
