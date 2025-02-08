@@ -1,59 +1,105 @@
-# UdemyProject
+<div align="center">
+    <img alt="Easy Task" src="./public/assets/images/png/task-management-logo.png" width="250px">
+</div>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
+## 📖 Introdução
+Este projeto consiste na implementação de uma interface de gerenciamento de tarefas para equipes, um tipo de to-do list. O propósito da aplicação é aprender e aplicar conceitos fundamentais de angular como componentes, services, módulos etc.
 
-## Development server
+Esse projeto foi desenvolvido com base no curso [Angular - The Complete Guide (2025 Edition)
+](https://www.udemy.com/course/the-complete-guide-to-angular-2/) de Maximilian Schwarzmüller.
 
-To start a local development server, run:
+Embora esta seja minha segunda aplicação com Angular, foi a primeira vez que tive o suporte de um curso completo. Isso me permitiu entender melhor as boas práticas, a estrutura do framework.
 
-```bash
-ng serve
-```
+## 🛠️ Tecnologias Utilizadas
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Angular**: Versão 19.1.4
+- **Git**
+- **GitHub Pages** (para deploy)
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 💻 Como Executar o Projeto Localmente
 
-```bash
-ng generate component component-name
-```
+> 🛈 Necessário ter o Angular CLI instalado na sua máquina. [Saiba mais](https://angular.dev/installation).
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/gabriel-mns/easy-task.git
+   cd easy-task
+   ```
 
-```bash
-ng generate --help
-```
+2. Instale as dependências:
+    ```bash
+    npm install
+    ```
 
-## Building
+3. Rode o servidor local:
+   ```bash
+   ng serve
+   ```
 
-To build the project run:
+4. Acesse a aplicação no navegador:
+    ```
+    http://localhost:4200
+    ```
 
-```bash
-ng build
-```
+    A aplicação também está hospedada no [Github Pages](https://gabriel-mns.github.io/easy-task/).
+   
+## 📋 Funcionalidades
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Listagem de tasks por usuário
+- Cadastro de novas tasks
+- Armazenamento de dados no localstorage*
+- Marcar tasks como concluídas (remove da lista)
 
-## Running unit tests
+| * Há um carregamento inicial de dados de tasks e usuários vindo de arquivos estáticos disponíveis em `src/app/data`.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## ⚙️ Como funciona
 
-```bash
-ng test
-```
+### O código
 
-## Running end-to-end tests
+Os componentes da aplicação são divididos em componentes compartilhados, componentes relacionados a tasks e componentes de usuário.
 
-For end-to-end (e2e) testing, run:
+Os componentes compartilhados são:
 
-```bash
-ng e2e
-```
+- **Cabeçalho (Header)**: Contém a logo, e um texto breve.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- **Cartão (Card)**: Uma estilização padrão para os cartões da aplicação. Utilizado nas tasks e na listagem de usuários
 
-## Additional Resources
+O principal componente relacionado a task:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Task**: Um cartão exibindo dados da task como título, data, etc.
+
+O principal componente relacionado a usuários:
+
+- **Usuário (User)**: Um cartão exibindo nome e foto de perfil do usuário.
+
+A aplicação também conta com um serviço de tasks para cadastro, leitura e remoção de tasks.
+
+### A aplicação
+Para usar a aplicação, é bem simples:
+
+- Selecione um usuário da lista para ver as taks dele
+- Clique em "Add Task" para adicionar uma nova task
+- Insira os dados da task e clique em "Create"
+- Clique em "Complete" para apagar a tarefa da lista
+  
+## 🧠 Aprendizados
+
+1. **Módulos**: 
+   Só tinha usado angular com componentes standalone, nunca tinha utilizado módulos. Agora consegui aprender a organizar a aplicação em módulos, separando funcionalidades e componentes específicos
+
+2. **Eventos**: 
+   Pude explorar e compreender melhor a utilização dos eventos. Aprendi principalmente a criar eventos personalizados e como utilizá-los.
+
+3. **Angular geral**: 
+   Como a minha experiência anterior com angular não foi com o apoio de um curso, muitos pontos tinham ficado soltos. Fazer esse projeto completo me deu uma visão mais concisa de como o angular funciona e também respondeu a alguns porquês.
+
+## ✅ Pontos de Melhoria
+- **Melhorar organização de pastas**: 
+    Os models estão localizados dentro da pasta de componentes, acredito que não seja uma boa prática uma vez que mesmo que estejam relacionados com "task" ou "user" eles não são componentes. Talvez fosse melhor separá-los em pastas diferentes mas de um modo que ainda fique "próximo" dos outros elementos de "user" e "task".
+
+## 🔗 Links
+
+- **Curso de Referência**: [Angular - The Complete Guide (2025 Edition)
+](https://www.udemy.com/course/the-complete-guide-to-angular-2/)
+- **Projeto Hospedado no GitHub Pages**: [Easy Task - Gabriel Martins](https://gabriel-mns.github.io/easy-task/)
