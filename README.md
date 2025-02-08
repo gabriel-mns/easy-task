@@ -1,5 +1,5 @@
 <div align="center">
-    <img alt="Easy Task" src="./public/assets/images/png/task-management-logo.png" width="250px">
+    <img alt="Easy Task" src="./public/assets/images/png/task-management-logo.png" width="150px">
 </div>
 
 ## 📖 Introdução
